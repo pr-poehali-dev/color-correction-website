@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [sliderPosition, setSliderPosition] = useState(50);
+
 
   const projects = [
     {
@@ -80,67 +80,127 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bebas text-primary">COLOR CORRECTION STUDIO</div>
-          <nav className="hidden md:flex gap-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Главная</a>
-            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Портфолио</a>
-          </nav>
-        </div>
-      </header>
+
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center cinema-gradient">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <h1 className="text-7xl md:text-9xl font-bebas text-primary mb-6 animate-fade-in">
-              ЦВЕТОКОРРЕКЦИЯ
-            </h1>
-            <h2 className="text-4xl md:text-6xl font-bebas text-white mb-8 animate-fade-in">
-              КИНО • СЕРИАЛЫ • РЕКЛАМА
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-in">
-              Профессиональная цветокоррекция и грейдинг для кинематографических проектов. 
-              Создаю атмосферу и настроение через цвет.
-            </p>
-            <div className="flex gap-4 animate-fade-in">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/80 gold-glow">
-                <Icon name="Play" size={20} className="mr-2" />
-                Посмотреть работы
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Icon name="Mail" size={20} className="mr-2" />
-                Связаться
-              </Button>
-            </div>
+      <section className="relative min-h-screen flex items-center justify-center px-4">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70"></div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="font-bebas text-6xl md:text-8xl mb-6">
+            <span className="gradient-text">ЦВЕТОКОРРЕКЦИЯ</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light">
+            Профессиональная цветокоррекция для кино, сериалов и рекламы
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="cinema-glow hover:animate-pulse">
+              <Icon name="Play" className="mr-2" size={20} />
+              Посмотреть портфолио
+            </Button>
+            <Button variant="outline" size="lg" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black">
+              <Icon name="Mail" className="mr-2" size={20} />
+              Связаться
+            </Button>
           </div>
         </div>
-        
-        {/* Floating elements */}
-        <div className="absolute right-10 top-1/2 hidden lg:block">
-          <div className="space-y-8 opacity-30">
-            <Icon name="Film" size={40} className="text-primary animate-pulse" />
-            <Icon name="Palette" size={40} className="text-primary animate-pulse" style={{ animationDelay: '1s' }} />
-            <Icon name="Camera" size={40} className="text-primary animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <Icon name="ChevronDown" size={32} className="text-yellow-400" />
+        </div>
+
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-bebas text-4xl md:text-5xl text-center mb-16">
+            <span className="gradient-text">УСЛУГИ</span>
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-gray-900/50 border-gray-800 hover:border-yellow-400/50 transition-all duration-300 cinema-glow">
+              <CardContent className="p-6 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 mb-6">
+                  <Icon name="Film" size={32} className="text-yellow-400" />
+                </div>
+                <h3 className="font-bebas text-2xl mb-4 text-white">Кинематограф</h3>
+                <p className="text-gray-400 mb-6">Цветокоррекция художественных фильмов с кинематографичным подходом</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    DaVinci Resolve
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    HDR мастеринг
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Кинематографичные LUT
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gray-900/50 border-gray-800 hover:border-yellow-400/50 transition-all duration-300 cinema-glow">
+              <CardContent className="p-6 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 mb-6">
+                  <Icon name="Tv" size={32} className="text-yellow-400" />
+                </div>
+                <h3 className="font-bebas text-2xl mb-4 text-white">Сериалы</h3>
+                <p className="text-gray-400 mb-6">Профессиональная цветокоррекция сериалов и многосерийных проектов</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Консистентность серий
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Быстрый workflow
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Broadcast стандарты
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gray-900/50 border-gray-800 hover:border-yellow-400/50 transition-all duration-300 cinema-glow">
+              <CardContent className="p-6 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-400/10 mb-6">
+                  <Icon name="Megaphone" size={32} className="text-yellow-400" />
+                </div>
+                <h3 className="font-bebas text-2xl mb-4 text-white">Реклама</h3>
+                <p className="text-gray-400 mb-6">Яркая и привлекательная цветокоррекция для рекламных роликов</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Креативный подход
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Быстрые сроки
+                  </li>
+                  <li className="flex items-center justify-center text-sm text-gray-300">
+                    <Icon name="Check" size={16} className="text-yellow-400 mr-2" />
+                    Все форматы
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bebas text-primary mb-4">ПОРТФОЛИО</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Примеры работ с интерактивными слайдерами сравнения до и после цветокоррекции
-            </p>
-          </div>
-
+      <section className="py-20 px-4 bg-gray-900/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-bebas text-4xl md:text-5xl text-center mb-16">
+            <span className="gradient-text">ПОРТФОЛИО</span>
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="bg-secondary border-border hover:border-primary transition-colors group">
+              <Card key={project.id} className="bg-gray-900/50 border-gray-800 overflow-hidden hover:border-yellow-400/50 transition-all duration-300">
                 <CardContent className="p-0">
                   <BeforeAfterSlider 
                     beforeImage={project.beforeImage}
@@ -149,12 +209,9 @@ const Index = () => {
                   />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-primary font-medium">{project.category}</span>
-                      <Icon name="ExternalLink" size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                      <span className="text-xs text-yellow-400 font-medium">{project.category}</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-card-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                    <h3 className="font-bebas text-xl text-white">{project.title}</h3>
                   </div>
                 </CardContent>
               </Card>
@@ -163,57 +220,45 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bebas text-primary mb-4">УСЛУГИ</h2>
+      {/* Contact Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-bebas text-4xl md:text-5xl mb-8">
+            <span className="gradient-text">КОНТАКТЫ</span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-12">
+            Готов обсудить ваш проект и превратить видео в произведение искусства
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <Icon name="Mail" size={32} className="text-yellow-400 mx-auto mb-4" />
+              <h3 className="font-bebas text-xl mb-2">EMAIL</h3>
+              <p className="text-gray-400">colorist@example.com</p>
+            </div>
+            <div className="text-center">
+              <Icon name="Phone" size={32} className="text-yellow-400 mx-auto mb-4" />
+              <h3 className="font-bebas text-xl mb-2">ТЕЛЕФОН</h3>
+              <p className="text-gray-400">+7 (999) 123-45-67</p>
+            </div>
+            <div className="text-center">
+              <Icon name="MapPin" size={32} className="text-yellow-400 mx-auto mb-4" />
+              <h3 className="font-bebas text-xl mb-2">ЛОКАЦИЯ</h3>
+              <p className="text-gray-400">Москва, Россия</p>
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card border-border text-center p-8 hover:border-primary transition-colors">
-              <Icon name="Film" size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bebas text-card-foreground mb-4">КИНО</h3>
-              <p className="text-muted-foreground">
-                Цветокоррекция художественных и документальных фильмов
-              </p>
-            </Card>
-
-            <Card className="bg-card border-border text-center p-8 hover:border-primary transition-colors">
-              <Icon name="Tv" size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bebas text-card-foreground mb-4">СЕРИАЛЫ</h3>
-              <p className="text-muted-foreground">
-                Обработка многосерийных проектов с единым стилем
-              </p>
-            </Card>
-
-            <Card className="bg-card border-border text-center p-8 hover:border-primary transition-colors">
-              <Icon name="Video" size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bebas text-card-foreground mb-4">РЕКЛАМА</h3>
-              <p className="text-muted-foreground">
-                Яркие и запоминающиеся рекламные ролики
-              </p>
-            </Card>
-          </div>
+          <Button size="lg" className="cinema-glow">
+            <Icon name="MessageCircle" className="mr-2" size={20} />
+            Обсудить проект
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-card border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bebas text-primary mb-4 md:mb-0">
-              COLOR CORRECTION STUDIO
-            </div>
-            <div className="flex gap-6">
-              <Icon name="Instagram" size={24} className="text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Icon name="Youtube" size={24} className="text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Icon name="Mail" size={24} className="text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
-            <p>&copy; 2024 Color Correction Studio. Все права защищены.</p>
-          </div>
+      <footer className="border-t border-gray-800 py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-gray-500">
+            © 2024 Профессиональная цветокоррекция. Все права защищены.
+          </p>
         </div>
       </footer>
     </div>
